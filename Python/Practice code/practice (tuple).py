@@ -1,0 +1,5 @@
+name = ("Ash", "Akshay", "us", "aniket", "us")
+A = name.count("Ash")
+print(A)
+B = name.index("Ash")
+print(B)
