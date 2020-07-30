@@ -1,8 +1,29 @@
 # STONE,PAPER,SCISSOR
+import sys
+import random
+
+
+def game_starting():
+    dots()
+    dots()
+    dots()
+    print(".................Welcome to Game...............")
+    dots()
+    dots()
+    dots()
 
 
 def dots():
     print("...............................................")
+
+
+def wrong_input(no_check):
+    if int(no_check) < 4:
+        pass
+    else:
+        print("wrong input")
+        print("restart game again")
+        sys.exit()
 
 
 def score():
@@ -18,30 +39,55 @@ def winner_declaration():
         print("..............Winner is ", name_second_player, "..............")
 
 
+def each_event_result(name):
+    print("\n\t[[[ 5 points added to", name, "]]]")
+
+
+def variables_and_input():
+    print("You have to choose from this : \n1. Stone,\n2. Paper,\n3. SCISSOR\n")
+    name_first_player = input("Name of First Player : ")  # 1st person
+    # name_second_player = input("Name of second Player : ")  # 2nd person
+    name_second_player = "Pikachu"
+    print("Hello,", name_first_player,
+          " I am Pikachu. I will player along uh.  Lets start.")
+    print("Pika Pika.")
+    n = 0
+    return n, name_first_player, name_second_player
+
+
+def game_ending():
+    dots()
+    dots()
+    dots()
+    winner_declaration()
+    dots()
+    dots()
+    dots()
+
+
+# MAIN FUNCTION
 # Welcome to the game
-dots()
-dots()
-dots()
-print(".................Welcome to Game...............")
-dots()
-dots()
-dots()
+game_starting()
 print("\n\t\tStone, Paper, SCISSOR\n\n\n")
 
-# taking first input (1st Person)
-print("You have to choose from this : \n1. Stone,\n2. Paper,\n3. SCISSOR\n")
-name_first_player = input("Name of First Player : ")
-name_second_player = input("Name of second Player : ")
-n = 0
+# taking input
+
+n, name_first_player, name_second_player = variables_and_input()
+
 points1 = 0
 points2 = 0
+A = [1, 2, 3]
 
 while n <= 2:
     n += 1
     print("\n..................round :", n, "...................")
     first_person = input("Enter Input : ")
+    wrong_input(first_person)
+
     # print(name_first_player, ":", first_person)
-    Second_person = input("Enter Input : ")
+    Second_person = str(random.choice(A))
+    print("Pikachu Input : ", Second_person)
+    wrong_input(Second_person)
     print("\n")
     # print(name_second_player, ":", Second_person)
 
@@ -52,68 +98,64 @@ while n <= 2:
         dots()
     elif first_person == "1":
         print(name_first_player, ": Stone")
-        if Second_person == "2":
+        if Second_person == 2:
             print(name_second_player, ": Paper")
             print("\n")
             # result
             print("\t\t STONE vs PAPER")
-            print("\n\t\t[[[", name_second_player, "Won ]]]")
+            each_event_result(name_second_player)
             points2 += 5
             score()
             dots()
-        elif Second_person == "3":
+        elif Second_person == 3:
             print(name_second_player, ": SCISSOR")
             print("\n")
             # result
             print("\t\t STONE vs SCISSOR")
-            print("\n\t\t[[[", name_first_player, "Won ]]]")
+            each_event_result(name_first_player)
             points1 += 5
             score()
             dots()
     elif first_person == "2":
         print(name_first_player, ": Paper")
-        if Second_person == "1":
+        if Second_person == 1:
             print(name_second_player, ": Stone")
             print("\n")
             # result
             print("\t\t PAPER vs STONE")
-            print("\n\t\t[[[", name_first_player, "Won ]]]")
+            each_event_result(name_first_player)
             points1 += 5
             score()
             dots()
-        elif Second_person == "3":
+        elif Second_person == 3:
             print(name_second_player, ": SCISSOR")
             print("\n")
             # result
             print("\t\t PAPER vs SCISSOR")
-            print("\n\t\t[[[", name_second_player, "Won ]]]")
+            each_event_result(name_second_player)
             points2 += 5
             score()
             dots()
     elif first_person == "3":
         print(name_first_player, ": SCISSOR")
-        if Second_person == "1":
+        if Second_person == 1:
             print(name_second_player, ": Stone")
             print("\n")
             # result
             print("\t\t SCISSOR vs STONE")
-            print("\n\t\t[[[", name_second_player, "Won ]]]")
+            each_event_result(name_second_player)
             points2 += 5
             score()
             dots()
-        elif Second_person == "2":
+        elif Second_person == 2:
             print(name_second_player, ": stone")
             print("\n")
             # result
             print("\t\t SCISSOR vs PAPER")
-            print("\n\t\t[[[", name_first_player, "Won ]]]")
+            each_event_result(name_first_player)
             points1 += 5
             score()
             dots()
-dots()
-dots()
-dots()
-winner_declaration()
-dots()
-dots()
-dots()
+
+
+game_ending()
