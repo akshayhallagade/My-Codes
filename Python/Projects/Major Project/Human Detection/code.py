@@ -1,7 +1,7 @@
 import cv2
-import numpy as np
+import numpy as cap
 
-cap = cv2.VideoCapture('videoplayback.mp4')
+cap = cv2.VideoCapture(0)
 frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
 
 frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -25,11 +25,11 @@ while cap.isOpened():
     for contour in contours:
         (x, y, w, h) = cv2.boundingRect(contour)
 
-        if cv2.contourArea(contour) < 1000:
+        if cv2.contourArea(contour) < 9000:
             continue
         cv2.rectangle(frame1, (x, y), (x+w, y+h), (0, 255, 0), 2)
-        cv2.putText(frame1, "Status: {}".format('Movement'), (10, 20), cv2.FONT_HERSHEY_SIMPLEX,
-                    1, (0, 0, 255), 3)
+        cv2.putText(frame1, "Status: {}".format('Movement'),
+                    (10, 20), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3)
     #cv2.drawContours(frame1, contours, -1, (0, 255, 0), 2)
 
     image = cv2.resize(frame1, (1280, 720))
