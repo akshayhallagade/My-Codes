@@ -1,5 +1,5 @@
 # STONE,PAPER,SCISSOR
-import sys
+import sys  # for exiting code
 
 
 def game_starting():
