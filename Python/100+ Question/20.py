@@ -7,3 +7,16 @@ and n.
 """
 Consider use yield.
 """
+
+
+def putnumber(n):
+    i = 1
+    empty = []
+    while i <= n:
+        if i % 7 == 0:
+            empty.append(i)
+            i += 1
+    print(empty)
+
+
+putnumber(100)
