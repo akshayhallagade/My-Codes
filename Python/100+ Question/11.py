@@ -15,7 +15,7 @@ raw_input = "0100,0011,1010,1001"
 raw_input = [number for number in raw_input.split(",")]
 empty = []
 for raw in raw_input:
-    # we have to choose only 4 digit number so "and (len(str(int(raw))) == 4)" was written.
+    # we have to choose only 4 digit number so "(len(str(int(raw))) == 4)" was written.
     if (0 == int(raw) % 5) and (len(str(int(raw))) == 4):
         empty.append(int(raw))
 print(empty)

@@ -13,8 +13,7 @@ Then, the output of the program should be:
 Note: In case of input data being supplied to the question, it should be assumed to be a console input in a comma-separated form.
 """
 
-var = input()
-var = list(var.split(","))
+var = input().split(",")
 empty = []
 for i in range(int(var[0])):
     elements = []

@@ -13,5 +13,5 @@ In case of input data being supplied to the question, it should be assumed to be
 
 row_input = input()
 row_list = list(row_input.split(","))
-row_list.sort()
+row_list.sort()  # row_list = sorted(row_list)
 print(row_list)

@@ -13,7 +13,5 @@ In case of input data being supplied to the question, it should be assumed to be
 tuple() method can convert list to tuple
 """
 row_input = (34, 67, 55, 33, 12, 98)
-row_input = list(row_input)
-tuple_fy = tuple(row_input)
+print(list(row_input))
 print(row_input)
-print(tuple_fy)

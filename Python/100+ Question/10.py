@@ -13,12 +13,12 @@ We use set container to remove duplicated data automatically and then use sorted
 """
 # 1
 row_input = "hello world and practice makes perfect and hello world again"
-row_input = list(row_input.split(" "))
-row_input = list(set(row_input))
-row_input = sorted(row_input)
+row_input = set(row_input.split(" "))
+row_input = sorted(list(row_input))
 print(row_input)
+
 # 2
-row_input = "hello world and practice makes perfect and hello world again"
-row_input = [words for words in row_input.split(" ")]
-row_input = sorted(list(set(row_input)))
-print(row_input)
+# row_input = "hello world and practice makes perfect and hello world again"
+# row_input = [words for words in row_input.split(" ")]
+# row_input = sorted(list(set(row_input)))
+# print(row_input)
