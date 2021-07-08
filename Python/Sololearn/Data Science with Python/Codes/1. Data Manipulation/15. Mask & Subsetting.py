@@ -12,9 +12,9 @@ heights_arr = heights_arr.reshape((45, 1))
 ages_arr = ages_arr.reshape((45, 1))
 
 height_age_arr = np.hstack((heights_arr, ages_arr))
-
-print(height_age_arr[:, 0]*0.0328084)
-# print(height_age_arr[:, 0]/0.0328084)
-# print(height_age_arr[:, 0]**0.0328084)
-# print(height_age_arr[:, 0]+0.0328084)
-# print(height_age_arr[:, 0]-0.0328084)
+mask = height_age_arr[:, 0] >= 182
+tall_presidents = height_age_arr[mask, ]
+print(tall_presidents)
+print("\n")
+print("\n")
+print(tall_presidents.shape)
