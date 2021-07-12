@@ -28,4 +28,3 @@ presidents_df = pd.read_csv(
     'https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 # writes average of each column.
 print(presidents_df.mean())
-#############################################
