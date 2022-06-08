@@ -1,11 +1,10 @@
-import random
-import cv2
+import random #getting the random input.
+import cv2 # to read the images.
 
 
 def findint():
     value = random.randint(1, 7)
     return value
-
 
 def showing(no):
     img = cv2.imread("img/"+str(no)+".jpg")
