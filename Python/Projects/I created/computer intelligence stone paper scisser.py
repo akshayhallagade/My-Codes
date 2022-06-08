@@ -17,15 +17,6 @@ def dots():
     print("...............................................")
 
 
-# def wrong_input(no_check):
-#     if int(no_check) < 4:
-#         pass
-#     else:
-#         print("wrong input")
-#         print("restart game again")
-#         sys.exit()
-
-
 def score():
     print(
         "\n\t", name_first_player, ":", points1, "\t", name_second_player, ":", points2,
