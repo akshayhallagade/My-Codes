@@ -1,9 +1,7 @@
 import sys
-import tkinter
+
 
 # Start again function.
-
-
 def start_again():
     start = input("Do you wannna start again? y or n :")
     if start == "y" or "Y":
