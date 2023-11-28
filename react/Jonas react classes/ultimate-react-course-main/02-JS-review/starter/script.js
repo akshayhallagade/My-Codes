@@ -142,3 +142,27 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+///////////////////////////// destructuring/////////////////
+////// 1.
+// const book = getBooks();
+// book;
+
+////// 2. Showing
+// const book = getBook(1);
+// const title = book.title;
+// title;
+// console.log(title);
+
+///// 3. Showing multiple objects
+// const book = getBook(1);
+// const title = book.title;
+// const author = book.author;
+// title;
+// author;
+// console.log(title, author);
+
+///// 4. Showing mulltiple objects
+const book = getBook(1);
+const { title, author } = book;
+console.log(title, author);
